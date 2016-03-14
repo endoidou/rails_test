@@ -3,10 +3,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = Hash.new 
-    @user[:name] = 'tanaka taro'
-    @user[:username] = 'ahyohyo'
-    @user[:location] = 'Tokyo'
-    @user[:about] = 'first user'
+    @user = User.find_by(:username => params[:username])
   end
 end
